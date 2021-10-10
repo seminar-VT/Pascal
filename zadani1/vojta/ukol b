@@ -1,1 +1,16 @@
+program projektb;
 
+var
+v,i: integer;
+
+
+begin
+    writeln('zadej výšku pyramidy');
+    readln(v);
+
+    for i:= 1 to v do begin
+    writeln('*');
+    end;
+
+   readln();
+end.   

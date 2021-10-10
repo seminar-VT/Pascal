@@ -1,1 +1,20 @@
+program projekt;
 
+var
+a,b,c,d,nej: integer;
+
+begin
+    writeln('napis tri libovolna cisla:');
+    readln(a);
+    readln(b);
+    readln(c);
+
+    if a>b and c then nej:= a;
+
+    if b> a and c then nej:= b;
+
+    if c>b and a then nej:= c;
+    writeln('nejvetsi cislo je: ',nej);
+
+      readln();
+end.            

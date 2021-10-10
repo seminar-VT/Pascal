@@ -1,1 +1,16 @@
+program projectc;
 
+var a: integer;
+begin
+writeln('zadej libovolne kladne cislo a ziskas hodnotu v Ascii tabulce :');
+readln(a);
+if a<0 then begin
+      writeln('zkus to znovu a lepe');
+      end else begin
+      writeln('znakem je: ',chr(a));
+    end;
+
+readln();
+readln();
+
+end.         

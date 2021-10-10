@@ -1,4 +1,4 @@
 # Pascal
 prvotní programování v Pascalu
-tohle je jen readme
+Tak snad to bude fungovat dobře
 

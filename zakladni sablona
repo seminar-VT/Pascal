@@ -1,0 +1,27 @@
+program projekt;
+
+var
+a,b,i: integer;
+
+
+begin
+    writeln('proste cokoliv sem napises');
+    readln(a);
+
+    if a=2 then begin
+       writeln('a je 2');
+       end else begin
+       writeln('a neni 2');
+     end;
+
+    while a=2 do begin
+       write('*');
+    end;
+
+    for i:= 1 to 10 do begin
+    writeln(i);
+    end;
+
+   //poznámky ke kódu :)//
+   readln();
+end.               

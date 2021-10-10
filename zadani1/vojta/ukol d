@@ -1,1 +1,21 @@
+program programD;
 
+var i,n: integer;
+
+begin
+write('zadej libovolne cislo n:');
+readln(n);
+writeln('--------------------');
+
+      for i:=1 to n do
+      begin
+       if i mod 3 = 0  then
+          writeln('Vt je super!')
+       else
+        writeln(i);
+      end;
+      
+writeln('--------------------');
+readln;
+end.
+                      

@@ -1,0 +1,16 @@
+Napiste program
+a) který načte tři čísla a vypíše to největší z nich
+b) který načte číslo a potom vykreslí na výstup pyramidu z hvězdiček
+např tohle pro 5
+*
+**
+***
+****
+*****
+
+c) který načte číslici a výsledek bude ascii hodnota znaku, který té číslici
+odpovídá
+
+d) který načte číslo n, vypíše čísla od jedné do n
+ale místo každého třetího
+napíše "Vt je super!"

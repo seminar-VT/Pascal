@@ -1,0 +1,81 @@
+program project1;
+
+var
+i: integer;
+slovo:string;
+polecisel: array [1 .. 100] of integer;
+
+begin
+  slovo:= 'nejaka stringova hodnota';
+
+   Writeln(slovo);
+   Writeln(slovo[5]);
+  Readln;
+
+  polecisel[7]:= 8;
+  Writeln(polecisel[7]);
+  Readln;
+
+
+  writeln(polecisel[10]);
+
+    for i:= 1 to Length(polecisel) do
+    polecisel[i]:= 0;
+
+
+  Readln();
+
+end.
+
+
+//////dále/////////////////
+
+program project1;
+
+var
+i: integer;
+polecisel: array [1 .. 100] of string;
+
+begin
+
+    for i:= 1 to 100 do
+    polecisel[i] := 'A';
+
+    for i:= 1 to 100 do
+    write(polecisel[i], ' ');
+
+    Readln();
+
+end.
+///////////array maximum -     polecisel: array [1 .. 99999999] of string; ///////
+TADY MÁTE KARLA:
+program project1;
+uses crt;
+
+type
+  tStudent = record
+          Jmeno: string;
+          Prijmeni:string;
+          Roknarozeni:integer;
+          ZaplatilISIC:boolean;
+
+      end;
+
+var
+  slovo:string;
+  student:tStudent;
+  polestudentu: array [1 .. 99999999] of tStudent;
+
+
+begin
+ Student.Jmeno := 'Karel';
+ Student.Prijmeni := 'zeleny';
+ Student.Roknarozeni := 2002;
+ Student.ZaplatilISIC:= false;
+
+   writeln(Student.Jmeno,' ', Student.Prijmeni,' ',Student.Roknarozeni,' ',Student.ZaplatilISIC );
+
+  readln;
+end.
+    
+         

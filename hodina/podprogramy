@@ -1,0 +1,69 @@
+program project_podprogramy;
+
+type
+  tStudent = record
+          Jmeno: string;
+          Prijmeni:string;
+          Roknarozeni:integer;
+          ZaplatilISIC:boolean;
+end;
+
+var
+  slovo:string;
+  student:tStudent;
+  polestudentu: array [1 .. 1000] of tStudent;
+
+procedure VypisStudenta(Student: Tstudent);           //procedura
+begin
+  
+   writeln(Student.Jmeno,' ', Student.Prijmeni);
+   writeln('roknarozeni ',  Student.Roknarozeni);
+   if Student.ZaplatilISIC then  writeln('Zaplatil Isic')
+   else   writeln('Nezaplatil Isic');
+
+end;
+
+function KolikJeMuLet(Student: Tstudent):Integer;     //funkce
+
+ begin
+   KolikJeMuLet := 2021 - Student.Roknarozeni;
+   writeln(KolikJeMuLet);
+end;
+
+procedure nactiStudenta(var Student: Tstudent);        //procedura zadavani studenta
+var
+  Jmeno,Prijmeni:string;
+  roknarozeni:integer;
+  ZaplatilISIC:boolean;
+  odpoved:char;
+begin
+
+  readln(Jmeno);
+   readln(Prijmeni);
+   readln(roknarozeni);
+
+ writeln('zaplatil student za Isic  (y/n: )');
+  readln(odpoved);
+  ZaplatilISIC := (odpoved = 'y');
+
+Student.Jmeno := Jmeno;
+Student.Prijmeni := Prijmeni;
+Student.Roknarozeni := roknarozeni;
+Student.ZaplatilISIC:= ZaplatilISIC;
+
+end;
+
+
+begin
+//Student.Jmeno := 'Karel';
+//Student.Prijmeni := 'zeleny';
+//Student.Roknarozeni := 2002;
+//Student.ZaplatilISIC:= false;
+//  KolikJeMuLet (student);
+
+  nactiStudenta(Student);
+  Vypisstudenta(student);
+
+  readln;
+end.
+        

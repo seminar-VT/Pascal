@@ -50,7 +50,7 @@ end.
 ///////////array maximum -     polecisel: array [1 .. 99999999] of string; ///////
 TADY MÁTE KARLA:
 program project1;
-uses crt;
+
 
 type
   tStudent = record

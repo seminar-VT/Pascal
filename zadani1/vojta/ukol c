@@ -2,6 +2,7 @@ program projectc;
 
 var a: integer;
 begin
+repeat
 writeln('zadej libovolne kladne cislo a ziskas hodnotu v Ascii tabulce :');
 readln(a);
 if a<0 then begin
@@ -10,7 +11,7 @@ if a<0 then begin
       writeln('znakem je: ',chr(a));
     end;
 
-readln();
+until a>0;
 readln();
 
 end.         

@@ -1,0 +1,38 @@
+program projectfile;
+
+var
+  f: file of integer;
+
+  radek: string;
+
+  a, cislo, soucet: integer;
+  t, c: Text;
+
+begin
+  Assign(t, 'muj textovy soubor.hkh');
+  Rewrite(t);
+
+  Writeln(t, 'hej hej hej');
+  Writeln(t, 'hello world');
+  Writeln(t, 'he he he hello w w w world');
+
+  Close(t);
+
+  Assign(c, 'muj soubor zvany c.hkh');
+  reset(c);
+
+  soucet:= 0;
+
+  while not eof(c) do
+  begin
+    readln(c,cislo);
+    writeln(cislo);
+    soucet := soucet + cislo ;
+  end;
+
+  writeln('Socet je: ', soucet);
+
+  append(c);   //otevři pro zápis a budeme zapisovat na konec
+
+  readln();
+end.         

@@ -1,17 +1,11 @@
-program projectc;
+program project1;
 
-var a: integer;
+var a:char;
+
 begin
-repeat
-writeln('zadej libovolne kladne cislo a ziskas hodnotu v Ascii tabulce :');
+writeln('Zadej jakykoliv znak Ascii tabulky a ziskas jeho hodnotu');
 readln(a);
-if a<0 then begin
-      writeln('zkus to znovu a lepe');
-      end else begin
-      writeln('znakem je: ',chr(a));
-    end;
-
-until a>0;
+writeln('Znakem je: ',ord(a));
 readln();
-
-end.         
+//v případě opačného použijeme funkci char a proměná a bude int.
+end.                                 

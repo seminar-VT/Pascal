@@ -1,0 +1,103 @@
+program project_podprogramy;
+
+type
+  tStudent = record
+          Jmeno: string;
+          Prijmeni:string;
+          Roknarozeni:integer;
+          Dalsistudent:boolean;
+end;
+
+var
+  slovo:string;
+  student:tStudent;
+  polestudentu: array [1 .. 1000] of tStudent;
+  x,i:integer;
+
+procedure VypisStudenta(Student: Tstudent);           //procedura
+begin
+
+   writeln(Student.Jmeno,' ', Student.Prijmeni);
+   writeln('roknarozeni ',  Student.Roknarozeni);
+
+
+
+end;
+
+procedure nactiStudenta(var Student: Tstudent);        //procedura zadavani studenta
+var
+  Jmeno,Prijmeni:string;
+  roknarozeni:integer;
+  Dalsistudent:boolean;
+  odpoved:char;
+begin
+writeln('Zadej jemeno studenta:');
+  readln(Jmeno);
+writeln('Zadej prijmeni studenta:');
+   readln(Prijmeni);
+   writeln('Zadej rok narozeni studenta:');
+   readln(roknarozeni);
+
+
+Student.Jmeno:= Jmeno;
+Student.Prijmeni := Prijmeni;
+Student.Roknarozeni := roknarozeni;
+Student.Dalsistudent:= Dalsistudent;
+
+
+end;
+
+procedure opakujStudenta(var Student: Tstudent);
+
+var
+  Jmeno,Prijmeni:string;
+  roknarozeni:integer;
+  Dalsistudent:boolean;
+  odpoved:char;
+begin
+ writeln('Chceme zadavat dalsiho studenta  (y/n: )');
+  readln(odpoved);
+
+  if odpoved= 'y' then
+  begin
+   writeln('Pokracujemeeeeeee');
+  nactiStudenta(Student);
+  Vypisstudenta(student);
+  opakujStudenta(student);
+   end else begin
+     writeln('to jsou vsichni');
+     Vypisstudenta(student);
+     end;
+
+
+  Student.Dalsistudent:= Dalsistudent;
+
+end;
+//procedure konecStudenta(Student: Tstudent);
+ //begin
+  //nactiStudenta(Student);
+  //Vypisstudenta(student);
+  //opakujStudenta(student);
+//end;
+
+
+
+begin
+//Student.Jmeno := 'Karel';
+//Student.Prijmeni := 'zeleny';
+//Student.Roknarozeni := 2002;
+//Student.ZaplatilISIC:= false;
+//  KolikJeMuLet (student);
+
+   nactiStudenta(Student);
+  Vypisstudenta(student);
+
+
+  opakujStudenta(student);
+
+  
+
+
+
+  readln;
+end.  

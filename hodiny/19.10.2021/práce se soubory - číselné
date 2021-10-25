@@ -1,0 +1,33 @@
+
+program projectfile;
+var
+  f:file of integer;
+   a: integer ;
+
+begin
+Assign(f,'muj soubor.hjh');
+
+  //Append (f);
+  Rewrite(f);
+
+  Write(f,555);
+  Write(f,20);
+  Write(f,1);
+
+  close(f);
+  Reset(f);    //souboru ke cteni
+
+ // seek(f,2);   //skok v souborech na pozici
+
+  while not eof(f) do begin   //eof - true dokud jsme neskoncili a False na konci souboru
+  Write (Filepos(f), ': ');
+
+  read(f,a) ;
+  writeln(a);
+
+  end;
+
+  close(f);
+  readln();
+end.
+                           

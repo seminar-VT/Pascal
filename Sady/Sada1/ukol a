@@ -1,20 +1,23 @@
-program projekt;
+program Michal_Vojtech_Pascal1a;
 
 var
-a,b,c,d,nej: integer;
-
+a,b,c, nej: integer;
 begin
-    writeln('napis tri libovolna cisla:');
+   nej:= 0;
+    writeln('Napis 3 libovolna cisla:');
     readln(a);
     readln(b);
     readln(c);
 
-    if a>b and c then nej:= a;
+    if a>nej then nej:= a;
 
-    if b> a and c then nej:= b;
+    if b>nej then nej:= b;
 
-    if c>b and a then nej:= c;
+    if c>nej then nej:= c;
+
     writeln('nejvetsi cislo je: ',nej);
+    readln();
+end.
 
-      readln();
-end.            
+
+          

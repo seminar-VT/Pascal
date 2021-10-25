@@ -1,0 +1,70 @@
+program projectA;
+
+
+type
+  tdelitelnost = record
+
+    end;
+
+var
+n,i,j,x,del,pocet: integer;
+f,b,c:string;
+delitelnost:tdelitelnost;
+
+slova: array [1..5] of string = ('Fizz','Buzz','Click','Blink','Ring');
+delitele:array [1..5] of integer;
+ddd: integer;
+
+
+
+procedure Delitelnostcisly(delitelnost:tdelitelnost);
+
+begin
+   for x:= 1 to pocet do begin
+
+   writeln('Delitelnost jakymi cisli chceme:');
+   readln(del);
+   delitele[del] := pocet;
+
+   writeln(x);
+
+
+end;
+end;
+
+begin
+    writeln('Napiste cislo n: ');
+   readln(n);
+
+
+   writeln('Kolika cisly chceme delit:');
+   readln(pocet);
+
+     Delitelnostcisly(delitelnost);
+
+  
+    for j:= 1 to pocet do begin
+     for i:=1 to n do
+      begin
+    if i mod del = 0  then
+
+    writeln(slova[1])
+    else  writeln(i);
+
+    end;
+    end;
+
+  //for j:= 1 to pocet do
+    //
+  // for i:=1 to n do
+  //    begin
+  //  if i mod del = 0  then
+   //    writeln(f)
+  //  else if i mod 5 = 0 then
+  //      writeln(b)
+  //      else
+   //   writeln(i);
+
+   readln();
+   readln();
+end.              

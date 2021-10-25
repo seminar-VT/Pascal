@@ -1,0 +1,40 @@
+program UkazkaFiles;
+
+var
+   f: file of integer;
+
+   cislo,soucet:integer;
+
+   radek:string;
+
+   t,c:text;
+
+begin
+  Assign(t,'mujtext.txt');
+  Rewrite(t);
+
+  Write(t, 'Hello World!');
+  Writeln(t, 'Jeste jednou hello world!');
+  Writeln(t, 'Jeste potreti hello world!');
+
+  Close(t);
+
+  
+  soucet := 0;
+
+  Assign(c,'cisla.txt');
+  Reset(c);
+  while not eof(c) do begin
+    readln(c,cislo);
+    writeln(cislo);
+    soucet := soucet + cislo;
+  end;
+  Close(c);
+
+
+  writeln('Soucet je: ',soucet);
+
+  readln();
+
+end.
+

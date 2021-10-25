@@ -1,0 +1,41 @@
+program projecta;
+var
+   f: file of integer;
+
+   cislo1,cislo2,soucet,nej:integer;
+
+   radek:string;
+
+   t,c:text;
+
+begin
+soucet := 0;
+nej := 0;
+  Assign(c,'cisla1.txt');
+  Reset(c);
+  while not eof(c) do begin
+    readln(c,cislo1);
+    readln(c,cislo2);
+        if cislo1>nej then
+    nej:= cislo1 ;
+    writeln(cislo1);
+
+    if cislo1 = cislo2 then
+      writeln('**************************');
+      writeln(cislo2);
+
+  end;
+
+  while not eof(c) do begin
+    readln(c,cislo1);
+    writeln(cislo1);
+    soucet := soucet + cislo1+cislo2;
+  end;
+  Close(c);
+
+
+  writeln('Soucet je: ',soucet);
+   writeln('nejvetsi je ',nej);
+  readln();
+
+end. 

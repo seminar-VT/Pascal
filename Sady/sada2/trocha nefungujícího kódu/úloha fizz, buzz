@@ -1,0 +1,52 @@
+program projectA_podprogramy;
+
+
+type
+  tdelitelnost = record
+    end;
+
+var
+n,i,j,x,del,pocet: integer;
+f,b,c:string;
+delitelnost:tdelitelnost;
+
+
+procedure Delitelnostcisly(delitelnost:tdelitelnost);
+
+begin
+   writeln('Delitelnost jakymi cisli chceme:');
+   readln(del);
+
+   if i mod del = 0  then
+       writeln(f)
+  end;
+
+begin
+
+   f:= 'Fizz';
+   b:='Buzz';
+   C:='Click';
+
+   writeln('Napiste cislo n: ');
+   readln(n);
+
+   writeln('Kolika cisly chceme delit:');
+   readln(pocet);
+
+   for x:= 1 to pocet do Delitelnostcisly(delitelnost);
+
+
+   for i:=1 to n do
+      begin
+    if i mod del = 0  then
+       writeln(f)
+   // else if i mod 5 = 0 then
+    //    writeln(b)
+    else if i mod 15 = 0 then
+        writeln(f,b)
+    else
+      writeln(i);
+end;
+
+   readln();
+end. 

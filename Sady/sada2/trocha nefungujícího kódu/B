@@ -1,0 +1,59 @@
+program Kos_Jakub_Pascal2b;
+
+
+type
+  Student = record
+    jmeno:string;
+    prijmeni:string;
+    vek:integer;
+    trida:string;
+    end;
+
+var
+  ArrayStudent:array [1..100] of Student;
+  Poc, i:integer;
+
+procedure NactiStudenta(poradi:integer);
+var
+  TStudent:Student;
+
+  begin
+    write('Zadejte krestni jmeno studenta: ');
+    Readln(TStudent.jmeno);
+    write('Zadejte prijmeni studenta: ');
+    Readln(TStudent.prijmeni);
+    write('Zadejte vek studenta: ');
+    Readln(TStudent.vek);
+    write('Zadejte tridu studenta (napr. "7A8 / 3A"): ');
+    Readln(TStudent.trida);
+    Writeln();
+
+    ArrayStudent[poradi] := TStudent;
+  end;
+
+procedure VypisStudenty(poradi:integer);
+
+  begin
+    Writeln('----- ',poradi, '. Student -----');
+    Writeln('Jmeno:    ',ArrayStudent[poradi].jmeno);
+    Writeln('Prijmeni: ',ArrayStudent[poradi].prijmeni);
+    Writeln('Vek:      ',ArrayStudent[poradi].vek);
+    Writeln('Trida:    ',ArrayStudent[poradi].trida);
+  end;
+
+begin
+   Write('Zadejte pocet studentu (max 100): ');
+   Readln(Poc);
+
+   for i:=1 to Poc do begin
+     NactiStudenta(i);
+   end;
+
+   Writeln();
+
+   for i:=1 to Poc do begin
+     VypisStudenty(i);
+   end;
+
+   Readln();
+end.

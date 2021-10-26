@@ -1,0 +1,49 @@
+program Kos_Jakub_Pascal2a;
+
+
+var
+  n, i, p, Nas, x:integer;
+  Nasobky: array [ 1..5] of integer;
+  Slova:array [1..5] of string;
+  Je:boolean;
+
+
+begin
+  Slova[1]:= 'Fizz';
+  Slova[2]:= 'Buzz';
+  Slova[3]:= 'Click';
+  Slova[4]:= 'Blink';
+  Slova[5]:= 'Ring';
+
+  write('Zadejte cislo n: ');
+  readln(n);
+  write('Zadejte pocet nasobku: ');
+  readln(p);
+
+  for i := 1 to p do begin
+    write('Zadejte ' , i , '. nasobek: ');
+    Readln(Nas);
+    Nasobky[i] := Nas;
+  end;
+
+  Je:= false;
+
+  for i := 1 to n do begin
+    for x:= 1 to p do begin
+      if ((i mod Nasobky[x]) = 0) then begin
+        write (Slova[x]);
+        Je := true;
+      end;
+
+    end;
+
+    if (Je = false) then write(i);
+
+    Je:= false;
+    Writeln();
+
+  end;
+
+
+  Readln();
+end.

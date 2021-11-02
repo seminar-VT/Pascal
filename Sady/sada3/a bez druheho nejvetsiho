@@ -1,0 +1,47 @@
+program uloha3_a;
+
+var
+   //f: file of integer;
+   cislo1,cislo2,pocet,prumer,soucet,nej,druhenej,vyskyt,vyskyt2:integer;
+   c:text;
+   soubor:string;
+
+begin
+vyskyt:= 1;
+pocet:= 0;
+nej := 0;
+ writeln('Zadej nazev souboru, ze ktereho chceme cist:');
+ readln(soubor);
+  Assign(c,soubor);
+  Reset(c);                    //cisla1txt - cisel je 3636
+  while not eof(c) do begin
+
+    readln(c,cislo1);                           //999
+    pocet:= pocet+1;
+    soucet := soucet + cislo1;
+
+if cislo1>nej then
+    cislo2:= druhenej;
+    nej:= cislo1;
+    vyskyt:= 1 ;
+    vyskyt2:= 1;
+
+if cislo1 = nej then
+   vyskyt:= vyskyt + 1;
+   cislo2:= druhenej  ;
+   vyskyt2:= vyskyt2 + 1;
+   end;
+
+  Close(c);
+  prumer:= soucet div pocet;
+
+  writeln('Mame zde:',pocet,' cisel');
+  writeln('Soucet je: ',soucet);
+  writeln('nejvetsi je ',nej);
+  writeln('a je tady ',vyskyt);
+  writeln('prumer je ',prumer);
+  writeln('Druhe nejvetsi cislo je ',druhenej);
+  writeln('a je tady ',vyskyt2);
+  readln();
+
+end.

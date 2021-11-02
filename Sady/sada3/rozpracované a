@@ -1,27 +1,31 @@
-program projecta;
+program uloha3_a;
 
 var
    f: file of integer;
 
 
-   cislo1,i,cislo2,poradi,prumer,soucet,nej,vyskyt:integer;
+   cislo1,i,cislo2,pocet,prumer,soucet,nej,vyskyt:integer;
    c:text;
 
 begin
-soucet := 0;
 vyskyt:= 1;
-//writeln('',nej);
+
 
 nej := 0;
+
   Assign(c,'cisla1.txt');
-  Reset(c);
+  Reset(c);                    //cisel je 3636
   while not eof(c) do begin
+
     readln(c,cislo1);
+    pocet:= pocet+1;
+    soucet := soucet + cislo1;
+
     if cislo1>nej then
     nej:= cislo1 ;
-    writeln(cislo1);
+    vyskyt:= 1;
+   // writeln(cislo1);
 
-   soucet := soucet + cislo1;
 
     if cislo1 = nej then
    vyskyt:= vyskyt + 1;
@@ -32,12 +36,13 @@ nej := 0;
 
   end;
   Close(c);
-  prumer:= soucet div 1000000;
+  prumer:= soucet div pocet;
 
+  writeln('Mame zde:',pocet,' cisel');
   writeln('Soucet je: ',soucet);
-   writeln('nejvetsi je ',nej);
-     writeln('a je tady ',vyskyt);
-    writeln('prumer je ',prumer);
+  writeln('nejvetsi je ',nej);
+  writeln('a je tady ',vyskyt);
+  writeln('prumer je ',prumer);
   readln();
 
-end.           
+end.      

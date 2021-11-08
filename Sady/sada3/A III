@@ -1,4 +1,4 @@
-program 3aiii;
+program kos_jakub_3aiii;
 
 
 var
@@ -32,6 +32,13 @@ begin
                 else if (current = MAX) then begin
 
                   vyskyt := vyskyt + 1;
+                end;
+
+                if (current = MAX2) then vyskyt2 := vyskyt2 + 1;
+
+                if (current > MAX2) and not (current = MAX) then begin
+                  MAX2 := current;
+                  vyskyt2:= 1;
                 end;
 
            end;

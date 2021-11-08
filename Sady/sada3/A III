@@ -1,0 +1,55 @@
+program 3aiii;
+
+
+var
+  f: text;
+  soubor : string;
+  current, MAX, vyskyt, MAX2, vyskyt2, pocetCisel, soucetCisel:integer;
+  prumer : real;
+
+
+begin
+     write('Zadejte nazev souboru: ');
+     readln(soubor);
+     MAX := -1;
+     pocetCisel := 0;
+     soucetCisel := 0;
+     assign(f, soubor);
+     Reset(f);
+     while not eof(f) do
+           begin
+                readln(f, current);
+                pocetCisel := pocetCisel + 1;
+                soucetCisel := soucetCisel + current;
+
+                if (current > MAX) then begin
+                  MAX2:= MAX;
+                  MAX := current;
+
+                  vyskyt2 := vyskyt;
+                  vyskyt := 1;
+                end
+                else if (current = MAX) then begin
+
+                  vyskyt := vyskyt + 1;
+                end;
+
+           end;
+     close(f);
+     prumer := soucetCisel / pocetCisel;
+
+     Writeln('Nejvetsi cislo je: ', MAX);
+     Writeln('Nejvetsi cislo se vyskytuje ', vyskyt, 'krat.');
+
+     Writeln();
+
+     Writeln('Druhe nejvetsi cislo je: ', MAX2);
+     Writeln('Druhe nejvetsi cislo se vyskytuje ', vyskyt2, 'krat.');
+
+     Writeln();
+
+     Writeln('Prumer vsech cisel je: ', prumer:0:2);
+
+     Readln();
+
+end.

@@ -1,0 +1,37 @@
+program 3b;
+
+var
+  f, p: text;
+  current, i :integer;
+
+  seznam : array [1..100] of integer;
+
+begin
+     for i := 1 to 100 do begin
+          seznam[i] := 0;
+     end;
+
+     assign(f, 'cislaMOC.txt');
+     Reset(f);
+     while not eof(f) do
+           begin
+                readln(f, current);
+                seznam[current]:= seznam[current] + 1;
+
+           end;
+     close(f);
+
+
+
+     Assign(p,'pocty.txt');
+     Rewrite(p);
+     for i := 1 to 100 do begin
+          Writeln(p, i, ':',seznam[i]);
+     end;
+     Close(p);
+
+     Writeln('Byl vytvoren soubor pocty.txt');
+
+     Readln();
+
+end.

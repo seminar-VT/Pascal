@@ -1,0 +1,139 @@
+program pascal4;
+
+var
+  VstupCislo:string;
+  Zsoustava, DOsoustava:integer;
+
+
+
+  function Mocnina(Mocnenec, Exponent:integer):integer;
+  var
+     i, FINAL:integer;
+  begin
+    FINAL := 1;
+    for i:=1 to Exponent do begin
+    FINAL := FINAL * Mocnenec;
+    end;
+
+    Mocnina := FINAL;
+  end;
+
+ function Cifra2Hodnota(Znak:char):integer;
+var
+  ascii, FINAL:integer;
+ begin
+   Znak := UpCase(Znak);
+   ascii := ord(Znak);
+
+   if (ascii > 47) and (ascii < 58) then begin
+        FINAL := ascii - 48;
+   end;
+
+   if (ascii > 64) and (ascii < 91) then begin
+        FINAL := ascii - 55;
+   end;
+
+   Cifra2Hodnota := FINAL;
+ end;
+
+function Hodnota2Cifra(Hodnota:integer):char;
+var
+  FINAL:char;
+ begin
+
+   if (hodnota < 10) then begin
+        FINAL := Char(Hodnota + 48);
+   end;
+
+   if (hodnota > 9) and (hodnota < 36) then begin
+        FINAL := Char(Hodnota + 55);
+   end;
+
+   Hodnota2Cifra := FINAL;
+ end;
+
+
+  function doDEC(VstupCislo:string; Zsoustava:integer): integer;
+
+     var
+        FINAL, Exponent, index:integer;
+           begin
+               FINAL := 0;
+               index:= 1;
+                Exponent := length(VstupCislo) - 1;
+                while  Exponent > -1 do begin
+
+                   FINAL := Cifra2Hodnota(VstupCislo[index])*Mocnina(Zsoustava, Exponent) + FINAL;
+                   Exponent:= Exponent - 1;
+                   index := index + 1;
+
+                end;
+                doDEC:=FINAL;
+  end;
+
+function MAXexponent (Cislo, mocnenec:integer):integer;
+
+begin
+       MAXexponent:= 0;
+       while Mocnina(mocnenec, MAXexponent) < Cislo do begin
+           MAXexponent:= MAXexponent + 1;
+       end;
+       if (Mocnina(mocnenec, MAXexponent) > Cislo) then MAXexponent:= MAXexponent - 1;
+end;
+
+function zDEC(VstupCislo, DOsoustava:integer):string;
+  var
+    exponent, zbytek, hodnota, mocninaa:integer;
+
+
+     begin
+         zDEC:= '';
+         exponent:= MAXexponent(VstupCislo, DOsoustava);
+         if exponent = -1 then zDEC := '0';
+         while exponent > -1 do begin
+         mocninaa:= Mocnina(DOsoustava, exponent);
+         zbytek := VstupCislo mod mocninaa;
+         hodnota:= (VstupCislo - zbytek) div mocninaa;
+         zDEC:= zDEC + Hodnota2Cifra(hodnota);
+         VstupCislo := zbytek;
+         exponent:= exponent - 1;
+         end;
+     end;
+
+function Prevod(VstupCislo: string; Zsoustava, DOsoustava: integer):string;
+
+   var
+     DEScislo:integer;
+         begin
+             DEScislo := doDEC(VstupCislo, Zsoustava);
+             Prevod := zDEC(DEScislo, DOsoustava);
+          end;
+
+
+
+//konec podprogramu
+
+begin
+  Write('Zadejte cislo pro prevod: ');
+  Readln(VstupCislo);
+  Write('Zadejte soustavu prevadeneho cisla: ');
+  Readln(Zsoustava);
+  while (Zsoustava) < 2 do begin
+     Writeln('SPATNY VSTUP');
+     Write('Zadejte novou hodntou: ');
+     Readln(Zsoustava);
+  end;
+  Write('Zadejte cilovou soustavu pro prevod: ');
+  Readln(DOsoustava);
+  while (DOsoustava) < 2 do begin
+     Writeln('SPATNY VSTUP');
+     Write('Zadejte novou hodntou: ');
+     Readln(DOsoustava);
+  end;
+
+  Write('Cislo v pozadovane soustave: ');
+
+  Writeln(Prevod(VstupCislo, Zsoustava, DOsoustava));
+
+  Readln();
+end.

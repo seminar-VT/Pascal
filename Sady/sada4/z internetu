@@ -1,0 +1,56 @@
+program project1;
+uses
+  SysUtils;
+
+{ 07.06 Funkce na převod desítkového čísla do hexadecimální soustavy }
+
+function prevod16(x:longint):string;
+var y:string;
+    zb:byte;
+begin
+   y:='sesnactkove';
+   repeat
+      zb:=x mod 16;
+      if (zb>=10) and (zb<=15) then y:=chr(zb+55)+y
+                               else y:=chr(zb+48)+y;
+      x:=x div 16;
+   until x=0;
+   prevod16:=y;
+end;
+
+
+var a:longint;
+    s:string;
+
+begin
+
+   write('Zadejte cislo v desitkove soustave: ');
+   readln(a);
+
+   s:=prevod16(a);
+
+   writeln(a,'D=',s);
+
+   readln;
+
+end.
+////////////////////////////program z desítkové do 2///////////
+program test;
+uses crt;
+var d,x:longint; wh:char; bn:string;
+
+begin
+  clrscr;
+  write('Enter a decimal number: ');
+  readln(d);
+  repeat
+    if d mod 2 = 0 then wh := '0'
+    else wh := '1';
+    bn := bn + wh;
+    d := d div 2;
+  until d = 0;
+  for x := length(bn) downto 1 do
+    write(bn[x]);
+  readkey
+end.
+                                                  
